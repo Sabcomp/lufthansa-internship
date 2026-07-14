@@ -1,4 +1,4 @@
-package org.internship.employee_system.entity;
+package org.internship.employess.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -37,4 +37,10 @@ public class Employee {
 
     @Column(nullable = false)
     private LocalDate hireDate;
+
+    @Override
+    public String toString(){
+        return firstName + " " + lastName;
+    }
 }
+

@@ -1,23 +1,23 @@
-package org.internship.employee_system;
+package org.internship.employess;
 
-import org.internship.employee_system.repository.EmployeeRepository;
+import org.internship.employess.repository.EmployeeRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.Scanner;
 
 @SpringBootApplication
-public class EmployeeSystemApplication {
-
+public class EmployessApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(EmployeeSystemApplication.class, args);
+		SpringApplication.run(EmployessApplication.class, args);
 	}
 
 	@Bean
@@ -61,15 +61,17 @@ public class EmployeeSystemApplication {
 					case 5 -> {
 						System.out.print("Minimum salary: ");
 						BigDecimal salary = new BigDecimal(scanner.nextLine());
-						repository.findBySalaryGreaterThanNative(salary);
+						System.out.println(repository.findBySalaryGreaterThanNative(salary));
 					}
 					case 6 -> {
 						Pageable pageableFive = PageRequest.of(0, 5);
-						repository.findAll(pageableFive);
+						repository.findAll(pageableFive).getContent().forEach(emp -> System.out.println(emp));
 					}
 
 					case 7 -> {
-						repository.findAllByOrderBySalaryDesc();
+						Sort sortBySalaryDesc = Sort.by("salary").descending();
+						System.out.println(repository.findAll(sortBySalaryDesc));
+//						System.out.println(repository.findAllByOrderBySalaryDesc());
 					}
 					case 0 -> {
 						System.out.println("Goodbye!");

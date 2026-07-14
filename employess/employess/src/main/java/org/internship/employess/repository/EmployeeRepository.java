@@ -1,12 +1,13 @@
-package org.internship.employee_system.repository;
+package org.internship.employess.repository;
 
+import org.internship.employess.entity.Employee;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.internship.employee_system.entity.Employee;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 
-import java.awt.print.Pageable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
@@ -16,8 +17,8 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     List<Employee> findByDepartment(String department);
 
     // find employees whose salary is greater than a given amount
-//    @Query("Select e FROM Employee e WHERE e.salary > :amount")
-//    List<Employee> findBySalaryGreaterThan(@Param("amount") BigDecimal amount);
+    //    @Query("Select e FROM Employee e WHERE e.salary > :amount")
+    //    List<Employee> findBySalaryGreaterThan(@Param("amount") BigDecimal amount);
     List<Employee> findBySalaryGreaterThan(BigDecimal amount);
 
     // find employees whose last name contains a given text
@@ -38,5 +39,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
     Page<Employee> findAll(Pageable pageable);
 
     // retrieve all employees sorted by salary in descending order
-    List<Employee> findAllByOrderBySalaryDesc();
+    List<Employee> findAll(Sort sort);
+
+    // List<Employee> findAllByOrderBySalaryDesc();
 }
