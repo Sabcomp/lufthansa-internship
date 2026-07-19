@@ -12,39 +12,46 @@ import java.util.List;
 @RestController
 @RequestMapping("/api/hotels")
 public class HotelController {
+
     private final HotelService hotelService;
 
-    public HotelController(HotelService hotelService){
+    public HotelController(HotelService hotelService) {
         this.hotelService = hotelService;
     }
 
     @PostMapping
-    public ResponseEntity<Void> createHotel(@Valid @RequestBody HotelDTO hotelDTO){
-        hotelService.createHotel(hotelDTO);
+    public ResponseEntity<Void> createHotel(@Valid @RequestBody HotelDTO dto) {
+        hotelService.createHotel(dto);
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping
-    public ResponseEntity<List<HotelDTO>> getHotels(){
-        List<HotelDTO> hotels = hotelService.getHotels();
+    public ResponseEntity<List<HotelDTO>> getAllHotels() {
+        List<HotelDTO> hotels = hotelService.getAllHotels();
         return new ResponseEntity<>(hotels, HttpStatus.OK);
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<HotelDTO> getHotel(@PathVariable Long id){
-        HotelDTO hotelDTO = hotelService.getHotel(id);
-        if (hotelDTO == null)
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+    public ResponseEntity<HotelDTO> getHotelById(@PathVariable Long id) {
+        HotelDTO hotelDTO =  hotelService.getHotelById(id);
         return new ResponseEntity<>(hotelDTO, HttpStatus.OK);
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<HotelDTO> updateHotel(@PathVariable Long id, @Valid @RequestBody HotelDTO hotelDTO){
-        HotelDTO updatedHotelDTO = hotelService.updateHotel(id, hotelDTO);
-        if (updatedHotelDTO == null)
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        return new ResponseEntity<>(updatedHotelDTO, HttpStatus.OK);
+    public ResponseEntity<HotelDTO> updateHotel(@PathVariable Long id, @Valid @RequestBody HotelDTO dto) {
+        HotelDTO hotelDTO = hotelService.updateHotel(id, dto);
+        return new ResponseEntity<>(hotelDTO, HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> deleteHotel(@PathVariable Long id) {
+        hotelService.deleteHotel(id);
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
 
+    @GetMapping("/search")
+    public ResponseEntity<List<HotelDTO>> searchByCity(@RequestParam String city) {
+        List<HotelDTO> hotels = hotelService.searchByCity(city);
+        return new ResponseEntity<>(hotels, HttpStatus.OK);
+    }
 }

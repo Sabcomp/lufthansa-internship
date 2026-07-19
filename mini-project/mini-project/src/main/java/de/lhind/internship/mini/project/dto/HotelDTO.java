@@ -3,6 +3,7 @@ package de.lhind.internship.mini.project.dto;
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 @Builder
@@ -16,14 +17,14 @@ public class HotelDTO {
     @NotBlank(message = "Hotel name is required")
     private String name;
 
-    @NotBlank(message = "Hotel city is required")
+    @NotBlank(message = "City is required")
     private String city;
 
-    @NotBlank(message = "Hotel address is required")
+    @NotBlank(message = "Address is required")
     private String address;
 
-    @NotBlank(message = "Hotel rating is required")
-    @Min(value = 1, message = "Rating should be at least 1")
-    @Max(value = 5, message = "Rating should be at most 5")
+    @NotNull(message = "Star rating is required")
+    @Min(value = 1, message = "Star rating must be between 1 and 5")
+    @Max(value = 5, message = "Star rating must be between 1 and 5")
     private Integer starRating;
 }

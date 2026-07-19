@@ -2,61 +2,79 @@ package de.lhind.internship.mini.project.service;
 
 import de.lhind.internship.mini.project.dto.HotelDTO;
 import de.lhind.internship.mini.project.entity.Hotel;
+import de.lhind.internship.mini.project.exception.ResourceNotFoundException;
 import de.lhind.internship.mini.project.repository.HotelRepository;
-import lombok.AllArgsConstructor;
+import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.OptionalDouble;
-import java.util.stream.Collectors;
 
 @Service
-@AllArgsConstructor
+@Transactional
 public class HotelService {
+
     private final HotelRepository hotelRepository;
 
-    public void createHotel(HotelDTO hotelDTO){
+    public HotelService(HotelRepository hotelRepository) {
+        this.hotelRepository = hotelRepository;
+    }
+
+    public void createHotel(HotelDTO dto) {
         Hotel hotel = new Hotel();
-        hotel.setAddress(hotelDTO.getAddress());
-        hotel.setName(hotelDTO.getName());
-        hotel.setCity(hotelDTO.getCity());
-        hotel.setStarRating(hotelDTO.getStarRating());
+        hotel.setName(dto.getName());
+        hotel.setCity(dto.getCity());
+        hotel.setAddress(dto.getAddress());
+        hotel.setStarRating(dto.getStarRating());
 
         hotelRepository.save(hotel);
     }
 
-    public List<HotelDTO> getHotels(){
+    public List<HotelDTO> getAllHotels() {
         return hotelRepository.findAll()
                 .stream()
-                .map(hotel -> HotelDTO.builder().id(hotel.getId())
-                        .name(hotel.getName())
-                        .address(hotel.getAddress())
-                        .city(hotel.getCity())
-                        .starRating(hotel.getStarRating()).build())
-                .collect(Collectors.toList());
+                .map(hotel -> toDto(hotel))
+                .toList();
     }
 
-    public HotelDTO getHotel(Long id){
-        Optional<Hotel> hotel = hotelRepository.findById(id);
-        if(hotel.isEmpty())
-            return null;
-        return HotelDTO.builder().id(hotel.get().getId())
-                .name(hotel.get().getName())
-                .address(hotel.get().getAddress())
-                .city(hotel.get().getCity())
-                .starRating(hotel.get().getStarRating()).build();
+    public HotelDTO getHotelById(Long id) {
+        Hotel hotel = findHotel(id);
+        return toDto(hotel);
     }
 
-    public HotelDTO updateHotel(Long id, HotelDTO hotelDTO){
+    public HotelDTO updateHotel(Long id, HotelDTO dto) {
+        Hotel hotel = findHotel(id);
+        hotel.setName(dto.getName());
+        hotel.setCity(dto.getCity());
+        hotel.setAddress(dto.getAddress());
+        hotel.setStarRating(dto.getStarRating());
+        return toDto(hotelRepository.save(hotel));
+    }
+
+    public void deleteHotel(Long id) {
+        Hotel hotel = findHotel(id);
+        hotelRepository.delete(hotel);
+    }
+
+    public List<HotelDTO> searchByCity(String city) {
+        return hotelRepository.findByCityIgnoreCase(city)
+                .stream()
+                .map(hotel -> toDto(hotel))
+                .toList();
+    }
+
+    public Hotel findHotel(Long id){
         Optional<Hotel> hotel = hotelRepository.findById(id);
-        if(hotel.isEmpty())
-            return null;
-        hotel.get().setName(hotelDTO.getName());
-        hotel.get().setAddress(hotelDTO.getAddress());
-        hotel.get().setCity(hotelDTO.getCity());
-        hotel.get().setStarRating(hotelDTO.getStarRating());
-        hotelRepository.save(hotel.get());
-        return hotelDTO;
+        if (hotel.isEmpty())
+            throw new ResourceNotFoundException("Hotel with ID " + id + " was not found");
+        return hotel.get();
+    }
+
+    public HotelDTO toDto(Hotel hotel){
+        return HotelDTO.builder().id(hotel.getId())
+                .name(hotel.getName())
+                .address(hotel.getAddress())
+                .city(hotel.getCity())
+                .starRating(hotel.getStarRating()).build();
     }
 }
