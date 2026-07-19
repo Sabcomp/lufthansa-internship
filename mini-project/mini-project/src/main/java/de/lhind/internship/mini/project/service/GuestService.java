@@ -48,10 +48,6 @@ public class GuestService {
     public GuestDTO updateGuest(Long id, GuestDTO dto) {
         Guest guest = findGuest(id);
 
-        if (guestRepository.existsByEmailIgnoreCase(dto.getEmail())) {
-            throw new DuplicateEmailException("A guest with email " + dto.getEmail() + " already exists");
-        }
-
         guest.setFirstName(dto.getFirstName());
         guest.setLastName(dto.getLastName());
         guest.setEmail(dto.getEmail());

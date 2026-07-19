@@ -2,6 +2,7 @@ package de.lhind.internship.mini.project.controller;
 
 import de.lhind.internship.mini.project.dto.ReservationDTO;
 import de.lhind.internship.mini.project.dto.ReservationRequestDTO;
+import de.lhind.internship.mini.project.dto.ReservationStatusDTO;
 import de.lhind.internship.mini.project.dto.RoomReservationCountDTO;
 import de.lhind.internship.mini.project.entity.ReservationStatus;
 import de.lhind.internship.mini.project.service.ReservationService;
@@ -41,7 +42,7 @@ public class ReservationController {
 
     @PatchMapping("/api/reservations/{id}/status")
     public ResponseEntity<ReservationDTO> updateStatus(@PathVariable Long id,
-                                                       @RequestBody ReservationStatus status) {
+                                                       @RequestBody ReservationStatusDTO status) {
         ReservationDTO reservation = reservationService.updateStatus(id, status);
         return new ResponseEntity<>(reservation, HttpStatus.OK);
     }

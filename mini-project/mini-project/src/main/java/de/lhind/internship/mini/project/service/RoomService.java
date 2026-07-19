@@ -1,6 +1,7 @@
 package de.lhind.internship.mini.project.service;
 
 import de.lhind.internship.mini.project.dto.RoomDTO;
+import de.lhind.internship.mini.project.dto.RoomStatusDTO;
 import de.lhind.internship.mini.project.entity.Hotel;
 import de.lhind.internship.mini.project.entity.Room;
 import de.lhind.internship.mini.project.entity.RoomStatus;
@@ -59,11 +60,6 @@ public class RoomService {
     public RoomDTO updateRoom(Long id, RoomDTO dto) {
         Room room = findRoom(id);
 
-        if (roomRepository.existsByHotelIdAndRoomNumber(room.getHotel().getId(), dto.getRoomNumber())) {
-            throw new DuplicateRoomNumberException(
-                    "Room number " + dto.getRoomNumber() + " already exists for hotel " + room.getHotel().getId());
-        }
-
         room.setRoomNumber(dto.getRoomNumber());
         room.setRoomType(dto.getRoomType());
         room.setCapacity(dto.getCapacity());
@@ -73,9 +69,9 @@ public class RoomService {
         return toDto(roomRepository.save(room));
     }
 
-    public RoomDTO updateRoomStatus(Long id, RoomStatus status) {
+    public RoomDTO updateRoomStatus(Long id, RoomStatusDTO dto) {
         Room room = findRoom(id);
-        room.setStatus(status);
+        room.setStatus(dto.getStatus());
         return toDto(roomRepository.save(room));
     }
 

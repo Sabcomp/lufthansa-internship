@@ -2,6 +2,7 @@ package de.lhind.internship.mini.project.service;
 
 import de.lhind.internship.mini.project.dto.ReservationDTO;
 import de.lhind.internship.mini.project.dto.ReservationRequestDTO;
+import de.lhind.internship.mini.project.dto.ReservationStatusDTO;
 import de.lhind.internship.mini.project.dto.RoomReservationCountDTO;
 import de.lhind.internship.mini.project.entity.Guest;
 import de.lhind.internship.mini.project.entity.Reservation;
@@ -91,9 +92,9 @@ public class ReservationService {
         return toDto(findReservation(id));
     }
 
-    public ReservationDTO updateStatus(Long id, ReservationStatus status) {
+    public ReservationDTO updateStatus(Long id, ReservationStatusDTO status) {
         Reservation reservation = findReservation(id);
-        reservation.setStatus(status);
+        reservation.setStatus(status.getStatus());
         return toDto(reservationRepository.save(reservation));
     }
 

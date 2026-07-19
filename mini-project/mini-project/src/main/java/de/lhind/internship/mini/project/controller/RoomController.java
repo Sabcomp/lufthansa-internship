@@ -1,6 +1,7 @@
 package de.lhind.internship.mini.project.controller;
 
 import de.lhind.internship.mini.project.dto.RoomDTO;
+import de.lhind.internship.mini.project.dto.RoomStatusDTO;
 import de.lhind.internship.mini.project.entity.RoomStatus;
 import de.lhind.internship.mini.project.service.RoomService;
 import jakarta.validation.Valid;
@@ -44,7 +45,7 @@ public class RoomController {
     }
 
     @PatchMapping("/api/rooms/{id}/status")
-    public ResponseEntity<RoomDTO> updateRoomStatus(@PathVariable Long id, @RequestBody RoomStatus status) {
+    public ResponseEntity<RoomDTO> updateRoomStatus(@PathVariable Long id, @RequestBody RoomStatusDTO status) {
         RoomDTO room = roomService.updateRoomStatus(id, status);
         return new ResponseEntity<>(room, HttpStatus.OK);
     }
