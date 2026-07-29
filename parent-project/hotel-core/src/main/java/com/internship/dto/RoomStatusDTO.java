@@ -1,6 +1,6 @@
 package com.internship.dto;
 
-import de.lhind.internship.mini.project.entity.RoomStatus;
+import com.internship.entity.RoomStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

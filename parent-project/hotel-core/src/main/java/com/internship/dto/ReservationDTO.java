@@ -1,6 +1,6 @@
 package com.internship.dto;
 
-import de.lhind.internship.mini.project.entity.ReservationStatus;
+import com.internship.entity.ReservationStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -9,6 +9,7 @@ import lombok.Setter;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import lombok.Builder;
 
 @Builder
 @Getter

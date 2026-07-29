@@ -1,9 +1,9 @@
 package com.internship.service;
 
-import de.lhind.internship.mini.project.dto.HotelDTO;
-import de.lhind.internship.mini.project.entity.Hotel;
-import de.lhind.internship.mini.project.exception.ResourceNotFoundException;
-import de.lhind.internship.mini.project.repository.HotelRepository;
+import com.internship.dto.HotelDTO;
+import com.internship.entity.Hotel;
+import com.internship.exception.ResourceNotFoundException;
+import com.internship.repository.HotelRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 

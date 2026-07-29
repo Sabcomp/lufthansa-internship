@@ -1,15 +1,15 @@
 package com.internship.service;
 
-import de.lhind.internship.mini.project.dto.ReservationDTO;
-import de.lhind.internship.mini.project.dto.ReservationRequestDTO;
-import de.lhind.internship.mini.project.dto.ReservationStatusDTO;
-import de.lhind.internship.mini.project.dto.RoomReservationCountDTO;
-import de.lhind.internship.mini.project.entity.*;
-import de.lhind.internship.mini.project.exception.InvalidReservationDateException;
-import de.lhind.internship.mini.project.exception.ResourceNotFoundException;
-import de.lhind.internship.mini.project.exception.RoomCapacityExceededException;
-import de.lhind.internship.mini.project.exception.RoomNotAvailableException;
-import de.lhind.internship.mini.project.repository.ReservationRepository;
+import com.internship.dto.ReservationDTO;
+import com.internship.dto.ReservationRequestDTO;
+import com.internship.dto.ReservationStatusDTO;
+import com.internship.dto.RoomReservationCountDTO;
+import com.internship.entity.*;
+import com.internship.exception.InvalidReservationDateException;
+import com.internship.exception.ResourceNotFoundException;
+import com.internship.exception.RoomCapacityExceededException;
+import com.internship.exception.RoomNotAvailableException;
+import com.internship.repository.ReservationRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 

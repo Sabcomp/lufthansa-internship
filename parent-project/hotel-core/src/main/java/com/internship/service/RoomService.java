@@ -1,9 +1,12 @@
 package com.internship.service;
 
 import com.internship.dto.RoomDTO;
+import com.internship.dto.RoomStatusDTO;
 import com.internship.entity.Hotel;
 import com.internship.entity.Room;
+import com.internship.entity.RoomStatus;
 import com.internship.exception.DuplicateRoomNumberException;
+import com.internship.exception.ResourceNotFoundException;
 import com.internship.repository.RoomRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,7 +1,7 @@
 package com.internship.dto;
 
-import de.lhind.internship.mini.project.entity.RoomStatus;
-import de.lhind.internship.mini.project.entity.RoomType;
+import com.internship.entity.RoomStatus;
+import com.internship.entity.RoomType;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import lombok.Builder;
 
 import java.math.BigDecimal;
 

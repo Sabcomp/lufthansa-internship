@@ -1,10 +1,10 @@
 package com.internship.service;
 
-import de.lhind.internship.mini.project.dto.GuestDTO;
-import de.lhind.internship.mini.project.entity.Guest;
-import de.lhind.internship.mini.project.exception.DuplicateEmailException;
-import de.lhind.internship.mini.project.exception.ResourceNotFoundException;
-import de.lhind.internship.mini.project.repository.GuestRepository;
+import com.internship.dto.GuestDTO;
+import com.internship.entity.Guest;
+import com.internship.exception.DuplicateEmailException;
+import com.internship.exception.ResourceNotFoundException;
+import com.internship.repository.GuestRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.stereotype.Service;
 

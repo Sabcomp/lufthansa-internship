@@ -1,16 +1,13 @@
 package com.internship.controller;
 
-import de.lhind.internship.mini.project.dto.RoomDTO;
-import de.lhind.internship.mini.project.dto.RoomStatusDTO;
-import de.lhind.internship.mini.project.entity.RoomStatus;
-import de.lhind.internship.mini.project.service.RoomService;
+import com.internship.dto.RoomDTO;
+import com.internship.dto.RoomStatusDTO;
+import com.internship.entity.RoomStatus;
+import com.internship.service.RoomService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 

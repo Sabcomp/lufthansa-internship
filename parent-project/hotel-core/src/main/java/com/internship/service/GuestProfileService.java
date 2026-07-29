@@ -1,7 +1,10 @@
 package com.internship.service;
 
 import com.internship.dto.GuestProfileDTO;
+import com.internship.entity.Guest;
+import com.internship.entity.GuestProfile;
 import com.internship.exception.DuplicateProfileException;
+import com.internship.exception.ResourceNotFoundException;
 import com.internship.repository.GuestProfileRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

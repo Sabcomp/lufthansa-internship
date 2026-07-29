@@ -1,6 +1,6 @@
 package com.internship.dto;
 
-import de.lhind.internship.mini.project.entity.ReservationStatus;
+import com.internship.entity.ReservationStatus;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

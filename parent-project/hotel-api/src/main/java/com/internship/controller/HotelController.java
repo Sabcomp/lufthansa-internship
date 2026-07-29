@@ -1,7 +1,7 @@
 package com.internship.controller;
 
-import de.lhind.internship.mini.project.dto.HotelDTO;
-import de.lhind.internship.mini.project.service.HotelService;
+import com.internship.dto.HotelDTO;
+import com.internship.service.HotelService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

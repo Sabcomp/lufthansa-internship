@@ -2,15 +2,10 @@ package com.internship.controller;
 
 import com.internship.dto.GuestProfileDTO;
 import com.internship.service.GuestProfileService;
-import de.lhind.internship.mini.project.dto.GuestProfileDTO;
-import de.lhind.internship.mini.project.service.GuestProfileService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/guests/{guestId}/profile")
