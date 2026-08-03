@@ -1,0 +1,64 @@
+2026-08-03 18:59:18 INFO  LibraryApplication             - Starting LibraryApplication using Java 24.0.2 with PID 23172 (C:\Users\Sabri\Desktop\library2\library\target\classes started by Sabri in C:\Users\Sabri\Desktop\library2)
+2026-08-03 18:59:18 INFO  LibraryApplication             - No active profile set, falling back to 1 default profile: "default"
+2026-08-03 18:59:18 INFO  Version                        - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-03 18:59:19 INFO  TomcatWebServer                - Tomcat initialized with port 8080 (http)
+2026-08-03 18:59:19 INFO  Http11NioProtocol              - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-03 18:59:19 INFO  StandardService                - Starting service [Tomcat]
+2026-08-03 18:59:19 INFO  StandardEngine                 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-03 18:59:19 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1625 ms
+2026-08-03 18:59:20 INFO  Http11NioProtocol              - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-03 18:59:20 INFO  TomcatWebServer                - Tomcat started on port 8080 (http) with context path '/'
+2026-08-03 18:59:20 INFO  LibraryApplication             - Started LibraryApplication in 2.888 seconds (process running for 4.066)
+2026-08-03 18:59:20 WARN  SpringDocAppInitializer        - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-03 18:59:20 WARN  SpringDocAppInitializer        - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-03 18:59:49 INFO  [/]                            - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-03 18:59:50 INFO  DispatcherServlet              - Initializing Servlet 'dispatcherServlet'
+2026-08-03 18:59:50 INFO  DispatcherServlet              - Completed initialization in 1 ms
+2026-08-03 18:59:50 INFO  AbstractOpenApiResource        - Init duration for springdoc-openapi is: 448 ms
+2026-08-03 19:00:08 TRACE LibraryService                 - Entering addBook() — title=Harry Potter, isbn=2038003480
+2026-08-03 19:00:08 DEBUG LibraryService                 - Validating book data before insert — isbn=2038003480
+2026-08-03 19:00:08 INFO  LibraryService                 - Book added successfully — title='Harry Potter', isbn=2038003480
+2026-08-03 19:01:10 INFO  GracefulShutdown               - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-03 19:01:10 INFO  GracefulShutdown               - Graceful shutdown complete
+2026-08-03 19:01:43 INFO  LibraryApplication             - Starting LibraryApplication using Java 24.0.2 with PID 3532 (C:\Users\Sabri\Desktop\library2\library\target\classes started by Sabri in C:\Users\Sabri\Desktop\library2)
+2026-08-03 19:01:43 INFO  LibraryApplication             - No active profile set, falling back to 1 default profile: "default"
+2026-08-03 19:01:44 INFO  Version                        - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-03 19:01:45 INFO  TomcatWebServer                - Tomcat initialized with port 8080 (http)
+2026-08-03 19:01:45 INFO  Http11NioProtocol              - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-03 19:01:45 INFO  StandardService                - Starting service [Tomcat]
+2026-08-03 19:01:45 INFO  StandardEngine                 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-03 19:01:45 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1678 ms
+2026-08-03 19:01:46 INFO  Http11NioProtocol              - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-03 19:01:46 INFO  TomcatWebServer                - Tomcat started on port 8080 (http) with context path '/'
+2026-08-03 19:01:46 INFO  LibraryApplication             - Started LibraryApplication in 2.887 seconds (process running for 3.902)
+2026-08-03 19:01:46 WARN  SpringDocAppInitializer        - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-03 19:01:46 WARN  SpringDocAppInitializer        - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-03 19:01:59 INFO  [/]                            - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-03 19:01:59 INFO  DispatcherServlet              - Initializing Servlet 'dispatcherServlet'
+2026-08-03 19:01:59 INFO  DispatcherServlet              - Completed initialization in 0 ms
+2026-08-03 19:01:59 TRACE LibraryService                 - Entering addBook() — title=Harry Potter, isbn=2038003480
+2026-08-03 19:01:59 DEBUG LibraryService                 - Validating book data before insert — isbn=2038003480
+2026-08-03 19:01:59 INFO  LibraryService                 - Book added successfully — title='Harry Potter', isbn=2038003480
+2026-08-03 19:05:00 INFO  GracefulShutdown               - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-03 19:05:00 INFO  GracefulShutdown               - Graceful shutdown complete
+2026-08-03 19:06:01 INFO  LibraryApplication             - Starting LibraryApplication using Java 24.0.2 with PID 15120 (C:\Users\Sabri\Desktop\library2\library\target\classes started by Sabri in C:\Users\Sabri\Desktop\library2)
+2026-08-03 19:06:01 INFO  LibraryApplication             - No active profile set, falling back to 1 default profile: "default"
+2026-08-03 19:06:01 INFO  Version                        - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-03 19:06:02 INFO  TomcatWebServer                - Tomcat initialized with port 8080 (http)
+2026-08-03 19:06:02 INFO  Http11NioProtocol              - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-03 19:06:02 INFO  StandardService                - Starting service [Tomcat]
+2026-08-03 19:06:02 INFO  StandardEngine                 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-03 19:06:02 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1353 ms
+2026-08-03 19:06:03 INFO  Http11NioProtocol              - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-03 19:06:03 INFO  TomcatWebServer                - Tomcat started on port 8080 (http) with context path '/'
+2026-08-03 19:06:03 INFO  LibraryApplication             - Started LibraryApplication in 2.459 seconds (process running for 3.342)
+2026-08-03 19:06:03 WARN  SpringDocAppInitializer        - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-03 19:06:03 WARN  SpringDocAppInitializer        - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-03 19:06:10 INFO  [/]                            - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-03 19:06:10 INFO  DispatcherServlet              - Initializing Servlet 'dispatcherServlet'
+2026-08-03 19:06:10 INFO  DispatcherServlet              - Completed initialization in 0 ms
+2026-08-03 19:06:10 TRACE LibraryService                 - Entering addBook() — title=Harry Potter, isbn=2038003480
+2026-08-03 19:06:10 DEBUG LibraryService                 - Validating book data before insert — isbn=2038003480
+2026-08-03 19:06:10 INFO  LibraryService                 - Book added successfully — title='Harry Potter', isbn=2038003480
+2026-08-03 19:07:59 INFO  GracefulShutdown               - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-03 19:07:59 INFO  GracefulShutdown               - Graceful shutdown complete
