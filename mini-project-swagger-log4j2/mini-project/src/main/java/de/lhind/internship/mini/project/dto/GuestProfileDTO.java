@@ -1,0 +1,18 @@
+package de.lhind.internship.mini.project.dto;
+
+import lombok.*;
+
+import java.time.LocalDate;
+
+@Builder
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+public class GuestProfileDTO {
+    private Long id;
+    private String address;
+    private LocalDate dateOfBirth;
+    private String nationality;
+    private String preferredLanguage;
+}
