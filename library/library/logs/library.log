@@ -8,3 +8,13 @@
 2026-08-03 19:05:50 INFO  LibraryApplicationTests        - Started LibraryApplicationTests in 1.994 seconds (process running for 3.906)
 2026-08-03 19:05:50 WARN  SpringDocAppInitializer        - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
 2026-08-03 19:05:50 WARN  SpringDocAppInitializer        - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-04 14:17:59 INFO  AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.internship.library.LibraryApplicationTests]: LibraryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-08-04 14:18:00 INFO  SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.internship.library.LibraryApplication for test class org.internship.library.LibraryApplicationTests
+2026-08-04 14:18:00 INFO  AnnotationConfigContextLoaderUtils - Could not detect default configuration classes for test class [org.internship.library.LibraryApplicationTests]: LibraryApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2026-08-04 14:18:00 INFO  SpringBootTestContextBootstrapper - Found @SpringBootConfiguration org.internship.library.LibraryApplication for test class org.internship.library.LibraryApplicationTests
+2026-08-04 14:18:00 INFO  LibraryApplicationTests        - Starting LibraryApplicationTests using Java 24.0.2 with PID 7668 (started by Sabri in C:\Users\Sabri\Desktop\lufthansa-internship\library\library)
+2026-08-04 14:18:00 INFO  LibraryApplicationTests        - No active profile set, falling back to 1 default profile: "default"
+2026-08-04 14:18:01 INFO  Version                        - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-04 14:18:02 INFO  LibraryApplicationTests        - Started LibraryApplicationTests in 2.543 seconds (process running for 4.969)
+2026-08-04 14:18:02 WARN  SpringDocAppInitializer        - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-04 14:18:02 WARN  SpringDocAppInitializer        - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'

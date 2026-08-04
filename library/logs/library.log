@@ -62,3 +62,25 @@
 2026-08-03 19:06:10 INFO  LibraryService                 - Book added successfully — title='Harry Potter', isbn=2038003480
 2026-08-03 19:07:59 INFO  GracefulShutdown               - Commencing graceful shutdown. Waiting for active requests to complete
 2026-08-03 19:07:59 INFO  GracefulShutdown               - Graceful shutdown complete
+2026-08-04 14:18:23 INFO  LibraryApplication             - Starting LibraryApplication using Java 24.0.2 with PID 13588 (C:\Users\Sabri\Desktop\lufthansa-internship\library\library\target\classes started by Sabri in C:\Users\Sabri\Desktop\lufthansa-internship\library)
+2026-08-04 14:18:23 INFO  LibraryApplication             - No active profile set, falling back to 1 default profile: "default"
+2026-08-04 14:18:24 INFO  Version                        - HV000001: Hibernate Validator 9.1.0.Final
+2026-08-04 14:18:27 INFO  TomcatWebServer                - Tomcat initialized with port 8080 (http)
+2026-08-04 14:18:27 INFO  Http11NioProtocol              - Initializing ProtocolHandler ["http-nio-8080"]
+2026-08-04 14:18:28 INFO  StandardService                - Starting service [Tomcat]
+2026-08-04 14:18:28 INFO  StandardEngine                 - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-08-04 14:18:28 INFO  WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4223 ms
+2026-08-04 14:18:30 INFO  Http11NioProtocol              - Starting ProtocolHandler ["http-nio-8080"]
+2026-08-04 14:18:30 INFO  TomcatWebServer                - Tomcat started on port 8080 (http) with context path '/'
+2026-08-04 14:18:30 INFO  LibraryApplication             - Started LibraryApplication in 7.303 seconds (process running for 8.988)
+2026-08-04 14:18:30 WARN  SpringDocAppInitializer        - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-08-04 14:18:30 WARN  SpringDocAppInitializer        - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-08-04 14:18:30 INFO  [/]                            - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-04 14:18:30 INFO  DispatcherServlet              - Initializing Servlet 'dispatcherServlet'
+2026-08-04 14:18:30 INFO  DispatcherServlet              - Completed initialization in 5 ms
+2026-08-04 14:18:32 INFO  AbstractOpenApiResource        - Init duration for springdoc-openapi is: 877 ms
+2026-08-04 14:18:59 TRACE LibraryService                 - Entering addBook() — title=harry, isbn=2080384038
+2026-08-04 14:18:59 DEBUG LibraryService                 - Validating book data before insert — isbn=2080384038
+2026-08-04 14:18:59 INFO  LibraryService                 - Book added successfully — title='harry', isbn=2080384038
+2026-08-04 14:19:58 INFO  GracefulShutdown               - Commencing graceful shutdown. Waiting for active requests to complete
+2026-08-04 14:19:58 INFO  GracefulShutdown               - Graceful shutdown complete
