@@ -1,16 +1,13 @@
 package org.test.cleancode.service;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.test.cleancode.domain.Car;
 import org.test.cleancode.dto.CarResponse;
 import org.test.cleancode.dto.RegisterCarRequest;
+import org.test.cleancode.exception.InvalidRegistrationException;
+import org.test.cleancode.exception.PlateNumberAlreadyExistsException;
 import org.test.cleancode.repository.CarRepository;
-import org.test.cleancode.repository.CarRepositoryMessy;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 
 @Service
 public class CarService {
@@ -20,76 +17,32 @@ public class CarService {
         this.carRepository = carRepository;
     }
 
-    public CarResponse register(RegisterCarRequest request) {
-        Map<String, Object> out = new HashMap<>();
-        String owner = null;
-        String plate = null;
-        String model = null;
+    public CarResponse registerCar(RegisterCarRequest request) {
+        validateRequest(request);
 
-        if (body != null) {
-            if (body.get("owner") != null) {
-                owner = String.valueOf(body.get("owner"));
-            } else {
-                owner = "";
-            }
-            if (body.get("plate") != null) {
-                plate = String.valueOf(body.get("plate"));
-            } else {
-                plate = "";
-            }
-            if (body.get("model") != null) {
-                model = String.valueOf(body.get("model"));
-            } else {
-                model = "";
-            }
-        } else {
-            owner = "";
-            plate = "";
-            model = "";
-        }
+        String normalizedPlateNumber = request.getPlateNumber().trim().toUpperCase();
+        carRepository.findByPlateNumber(normalizedPlateNumber).ifPresent(car -> {
+            throw new PlateNumberAlreadyExistsException("Plate number already exists: " + normalizedPlateNumber);
+        });
 
-        if (owner.trim().isEmpty()) {
-            out.put("ok", false);
-            out.put("code", 400);
-            out.put("message", "owner missing");
-            return out;
-        } else {
-            if (plate.trim().isEmpty()) {
-                out.put("ok", false);
-                out.put("code", 400);
-                out.put("message", "plate missing");
-                return out;
-            } else {
-                List<Car> all = r.f();
-                for (int i = 0; i < all.size(); i++) {
-                    Car c0 = all.get(i);
-                    if (c0.plateNumber != null) {
-                        if (c0.plateNumber.equalsIgnoreCase(plate.trim())) {
-                            out.put("ok", false);
-                            out.put("code", 409);
-                            out.put("message", "duplicate plate");
-                            return out;
-                        }
-                    }
-                }
-            }
-        }
+        Car newCar = new Car(null, request.getOwnerName().trim(), normalizedPlateNumber, request.getModel().trim());
+        Car savedCar = carRepository.save(newCar);
 
-        Car c = new Car();
-        c.ownerName = owner;
-        c.plateNumber = plate.trim();
-        c.model = model;
-        Car saved = r.s(c);
-
-        out.put("ok", true);
-        out.put("code", 200);
-        out.put("message", "car registered");
-        out.put("car", saved);
-        out.put("sizeNow", r.db.size());
-        return out;
+        return new CarResponse(savedCar.getId(), savedCar.getOwnerName(), savedCar.getPlateNumber(), savedCar.getModel());
     }
 
     private void validateRequest(RegisterCarRequest request){
+        if (request == null)
+            throw new InvalidRegistrationException("Request is required");
+        if (isBlank(request.getOwnerName()))
+            throw new InvalidRegistrationException("Owner name is required");
+        if (isBlank(request.getModel()))
+            throw new InvalidRegistrationException("Model is required");
+        if (isBlank(request.getPlateNumber()))
+            throw new InvalidRegistrationException("Plate number is required");
+    }
 
+    private boolean isBlank(String value){
+        return value == null || value.trim().isEmpty();
     }
 }

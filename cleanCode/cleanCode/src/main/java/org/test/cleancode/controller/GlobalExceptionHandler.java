@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import org.test.cleancode.exception.EmailAlreadyExistsException;
 import org.test.cleancode.exception.InvalidRegistrationException;
+import org.test.cleancode.exception.PlateNumberAlreadyExistsException;
 
 import java.util.Map;
 
@@ -26,6 +27,15 @@ public class GlobalExceptionHandler {
         return ResponseEntity.status(HttpStatus.CONFLICT)
                 .body(Map.of(
                         "error", "Email already exists",
+                        "message", exception.getMessage()
+                ));
+    }
+
+    @ExceptionHandler(PlateNumberAlreadyExistsException.class)
+    public ResponseEntity<Map<String, String>> handlePlateNumberAlreadyExists(PlateNumberAlreadyExistsException exception){
+        return ResponseEntity.status(HttpStatus.CONFLICT)
+                .body(Map.of(
+                        "error", "Plate number already exists",
                         "message", exception.getMessage()
                 ));
     }
