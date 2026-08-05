@@ -14,5 +14,5 @@
 | Maven Multi-Module           | parent-project             | July 23 |
 | Unit Testing, JUnit, Mockito | e-ticket-with-test         | July 28 |
 | log4j2, Swagger              | library                    | July 30 |
-
+| Clean Code & Design Patterns | cleanCode                  | August 4 |
 
