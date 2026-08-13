@@ -6,7 +6,7 @@ import jakarta.persistence.Enumerated;
 import lombok.*;
 import org.internship.task_management.entity.ProjectStatus;
 
-@Builder
+
 @Getter
 @Setter
 @NoArgsConstructor
