@@ -15,4 +15,7 @@
 | Unit Testing, JUnit, Mockito | e-ticket-with-test         | July 28 |
 | log4j2, Swagger              | library                    | July 30 |
 | Clean Code & Design Patterns | cleanCode                  | August 4 |
+| Event Driven Architecture & JMS |                         | August 6 |
+| Cloud Computing: AWS & Azure | task-management            | August 11 |
+| Docker                       |                            | August 13 |
 
