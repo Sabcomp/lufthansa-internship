@@ -12,13 +12,28 @@ import java.time.LocalDateTime;
 public class GlobalExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<ErrorResponse> handleInvalidProjectName(InvalidProjectNameException ex, HttpServletRequest request) {
+    public ResponseEntity<ErrorResponse> handleInvalidProjectName(InvalidProjectArgumentException ex, HttpServletRequest request) {
+        return buildError(ex, request, HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorResponse> handleInvalidTaskTitle(InvalidTaskArgumentException ex, HttpServletRequest request) {
         return buildError(ex, request, HttpStatus.BAD_REQUEST);
     }
 
     @ExceptionHandler
     public ResponseEntity<ErrorResponse> handleProjectNotFound(ProjectNotFoundException ex, HttpServletRequest request) {
         return buildError(ex, request, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorResponse> handleTaskNotFound(TaskNotFoundException ex, HttpServletRequest request) {
+        return buildError(ex, request, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler
+    public ResponseEntity<ErrorResponse> handleTaskAssignment(TaskAssignmentException ex, HttpServletRequest request) {
+        return buildError(ex, request, HttpStatus.CONFLICT);
     }
 
     @ExceptionHandler

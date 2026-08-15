@@ -1,7 +1,7 @@
 package org.internship.task_management.service;
 
 import org.internship.task_management.entity.Project;
-import org.internship.task_management.exception.InvalidProjectNameException;
+import org.internship.task_management.exception.InvalidProjectArgumentException;
 import org.internship.task_management.exception.ProjectNotFoundException;
 import org.internship.task_management.model.ProjectRequest;
 import org.internship.task_management.model.ProjectResponse;
@@ -20,7 +20,7 @@ public class ProjectService {
 
     public ProjectResponse createProject(ProjectRequest dto){
         if(dto.getName().trim().isBlank() || dto.getName() == null){
-            throw new InvalidProjectNameException("Project name should not be empty");
+            throw new InvalidProjectArgumentException("Project name should not be empty");
         }
         Project project = new Project(null, dto.getName().trim(), dto.getDescription(), dto.getStatus());
         Project savedProject = projectRepository.save(project);
